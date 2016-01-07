@@ -1,0 +1,6 @@
+{{loadBuilding Type/}}
+<p>Level: {{:Level}}</p>
+<br />
+<input type="button" value="Upgrade to {{:Level+1}}!" onclick="updateBuilding({{:Type}}, {{:Level+1}});"/>
+<input type="button" value="Downgrade to {{:Level-1}}!" onclick="updateBuilding({{:Type}}, {{:Level-1}});"/>
+<input type="button" value="Demolish!" onclick="updateBuilding(0, 0);"/>

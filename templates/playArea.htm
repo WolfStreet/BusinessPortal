@@ -1,0 +1,17 @@
+<table id="playGrid">
+	{{* window.coordx = 0;}}
+	{{for Buildings}}
+	<tr>
+		{{* window.coordy = 0;}}
+		{{for}}
+		<td>
+		<div class="grid" data-x = "{{*:coordx}}" data-y = "{{*:coordy}}">
+			{{loadBuilding Type/}}
+		</div>
+		</td>
+		{{* coordy +=1}}
+		{{/for}}
+	</tr>
+	{{* coordx+=1}}
+	{{/for}}
+</table>

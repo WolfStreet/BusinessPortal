@@ -1,0 +1,224 @@
+<!-- Right Panel Popup-->
+<div id="postPopup" style="display: none;">
+    <img src="/src/images/icons/closeAlpha.png" onclick="$(this).parent().hide(); $(this).siblings().hide(); $('.rightPanel').show();"/>
+    <p class="Message" style="display: none;"><br /></p>
+    <!-- Post Market-->
+    <div class="post" id="postMarket" style="display: none;">
+        <input type="image" src="/src/images/buttons/buyAlpha.png" value="Buyer" onclick="loadList(this);"/>
+        <input type="image" src="/src/images/buttons/sellAlpha.png" value="Seller" onclick="loadList(this);"/>
+        <br />
+        <div style="display: none;">
+            <img src="/src/images/resources/foodAlpha.png" title="Food"/>
+            <input type="checkbox" id="postFood" value="Food"/>
+            <br />
+            <img src="/src/images/resources/woodAlpha.png" title="Wood"/>
+            <input type="checkbox" id="postWood"value="Wood"/>
+            <br />
+            <img src="/src/images/Metal.png" title="Metal"/>
+            <input type="checkbox" id="postMetal" value="Metal"/>
+            <br />
+            <img src="/src/images/Cement.png" title="Cement"/>
+            <input type="checkbox" id="postCement" value="Cement"/>
+            <br />
+            <img src="/src/images/resources/clothesAlpha.png" title="Clothes"/>
+            <input type="checkbox" id="postClothes" value="Clothes"/>
+            <br />
+            <img src="/src/images/resources/fuelAlpha.png" title="Fuel"/>
+            <input type="checkbox" id="postFuel" value="Fuel"/>
+            <br />
+            <input type="hidden" id="postMarketResource" value="none"/>
+            <input type="text" id="postMarketAmount" placeholder="Amount of resources" onchange="$('#postPopup .Message').hide();"/>
+            <input type="text" id="postmarketRate" placeholder="Deal Rate" onchange="$('#postPopup .Message').hide();"/>
+            <input type="button" value="none" onclick="postMarket(this)" />
+        </div>
+    </div>
+    <!-- Post Market Ends-->
+    <!-- Post Jobs-->
+    <div class="post" id="postJobs" style="display: none;">
+        <input type="image" value="Candidate" onclick="loadList(this);"/>
+        <input type="image" value="Employer" onclick="loadList(this);"/>
+        <br />
+        <div style="display: none;">
+            <input type="checkbox" id="postTransport" value="Transport" />
+            <br />
+            <input type="checkbox" id="postEngineer" value="Transport" />
+            <br />
+            <input type="text" id="postJobsHours" placeholder="Duration (in Hours)" onchange="$('#postPopup .Message').hide();"/>
+            <input type="text" id="postJobsFee" placeholder="Fee for whole duration" onchange="$('#postPopup .Message').hide();"/>
+            <input type="hidden" id="postJobsCareer" value="none" />
+            <input type="button" value="none" onclick="postJobs(this)"/>
+        </div>
+    </div>
+    <!-- Post Jobs Ends-->
+    <!-- Post Bank -->
+    <div class="post" id="postBank" style="display: none;">
+        <input type="image" value="Lender" onclick="loadList(this)"/>
+        <input type="image" value="Borrower" onclick="loadList(this)"/>
+        <br />
+        <div style="display: none;">
+            <input type="text" id="postBankAmount" placeholder="Loan Amount"/>
+            <input type="text" id="postBankRate" placeholder="Interest Rate"/>
+            <input type="button" value="none" onclick="postBank(this)" />
+        </div>
+    </div>
+    <!-- Post Bank Ends-->
+</div>
+<!-- Right Panel Popup Ends-->
+<!-- Right Panel-->
+<!-- Right Panel Bank-->
+<div class="rightPanel" id="bank">
+    <b>Bank
+    <br />
+    </b>
+    <div id="takeLoan">
+        <b>Take Loan
+        <br />
+        </b>
+        {{* var banks = loadBank("", "", "All", "Lender")}}
+        <table>
+            {{* if(banks != null) { }}
+            {{* for(i=0;i < banks.length;i++) { }}
+            <tr class="loan" id="{{*:banks[i].ID}}">
+                <td>{{*:banks[i].UserName}}</td>
+            </tr>
+            {{*  }  }}
+            {{*  }  }}
+        </table>
+    </div>
+    <b id="bankRequest" onclick="$('#postPopup #postBank').show(); $('#postPopup').show(); $('.rightPanel').hide()"> Post Loan Request
+    <br />
+    </b>
+</div>
+<!-- Right Panel Bank Ends-->
+<!-- Right Panel Jobs-->
+<div class="rightPanel" id="jobs">
+    <b>Recruitment Portal
+    <br />
+    </b>
+    <div id="recruitEngineer">
+        <b>Recruit Engineer
+        <br />
+        </b>
+        {{* var jobs = loadJobs("", "Engineer", "All", "Candidate")}}
+        <table>
+            {{* if(jobs != null) { }}
+            {{* for(i=0; i < jobs.length; i++) { }}
+            <tr class="engineer" id="{{*:jobs[i].ID}}" onclick="acceptJobs(this);">
+                <td>{{*:jobs[i].UserName}}</td>
+            </tr>
+            {{*  }  }}
+            {{*  }  }}
+        </table>
+    </div>
+    <div id="recruitTransport">
+        <b>Recruit Transport
+        <br />
+        </b>
+        {{* var jobs = loadJobs("", "Transport", "All", "Candidate")}}
+        <table>
+            {{* if(jobs != null) { }}
+            {{* for(i=0; i < jobs.length; i++) { }}
+            <tr class="transport" id="{{*:jobs[i].ID}}" onclick="acceptJobs(this);">
+                <td>{{*:jobs[i].UserName}}</td>
+            </tr>
+            {{*  }  }}
+            {{*  }  }}
+        </table>
+    </div>
+    <b>Vacancies
+    <br />
+    </b>
+    <div id="needEngineer">
+        <b>Need for Engineers
+        <br />
+        </b>
+        {{* var jobs = loadJobs("", "Engineer", "All", "Employer") }}
+        <table>
+            {{* if(jobs != null) { }}
+            {{* for(i=0; i < jobs.length; i++) { }}
+            <tr class="engineer" id="{{*:jobs[i].ID}}" onclick="acceptJobs(this);">
+                <td>{{*:jobs[i].Name}}</td>
+                <td>{{*:jobs[i].SkillPoints}}</td>
+                <td>{{*:jobs[i].Hours}}</td>
+                <td>{{*:jobs[i].Fee}}</td>
+            </tr>
+            {{*  } }}
+            {{*  } }}
+        </table>
+    </div>
+    <div id="needTransport">
+        <b>Need for Transport
+        <br />
+        </b>
+        {{* var jobs = loadJobs("", "Transport", "All", "Employer") }}
+        <table>
+            {{* if(jobs != null) { }}
+            {{* for(i=0; i < jobs.length; i++) { }}
+            <tr class="transport" id="{{*:jobs[i].ID}}" onclick="acceptJobs(this);">
+                <td>{{*:jobs[i].Name}}</td>
+                <td>{{*:jobs[i].SkillPoints}}</td>
+                <td>{{*:jobs[i].Hours}}</td>
+                <td>{{*:jobs[i].Fee}}</td>
+            </tr>
+            {{*  } }}
+            {{*  } }}
+        </table>
+    </div>
+    <b id="jobsRequest" onclick="$('#postPopup #postJobs').show(); $('#postPopup').show(); $('.rightPanel').hide()"> Post Job Request
+    <br />
+    </b>
+    <div class="emptyDiv">
+
+    </div>
+</div>
+<!-- Right Panel Jobs Ends-->
+<!-- Right Panel Market-->
+<div class="rightPanel" id="market">
+    <b>Market
+    <br />
+    </b>
+    <div id="buy">
+        <b>Requests for Resources
+        <br />
+        </b>
+        <table>
+            {{* var market = loadMarket("", "", "All", "Buyer") }}
+            {{* if(market != null) { }}
+            {{* for(i=0; i < market.length; i++) { }}
+            <tr id="{{*:market[i].ID}}">
+                <td>{{*:market[i].UserName}}</td>
+                <td>{{*:market[i].Resource}}</td>
+                <td>{{*:market[i].Amount}}</td>
+                <td>{{*:market[i].Rate}}</td>
+            </tr>
+            {{*  }  }}
+            {{*  }  }}
+        </table>
+    </div>
+    <div id="sell">
+        <b>Resources in Market
+        <br />
+        </b>
+        <table>
+            {{* var market = loadMarket("", "", "All", "Seller") }}
+            {{* if(market != null) { }}
+            {{* for(i=0; i < market.length; i++) { }}
+            <tr id="{{*:market[i].ID}}">
+                <td>{{*:market[i].UserName}}</td>
+                <td>{{*:market[i].Resource}}</td>
+                <td>{{*:market[i].Amount}}</td>
+                <td>{{*:market[i].Rate}}</td>
+            </tr>
+            {{*  }  }}
+            {{*  }  }}
+        </table>
+    </div>
+    <b id="marketRequest" onclick="$('#postPopup #postMarket').show(); $('#postPopup').show(); $('.rightPanel').hide()">Place Deal
+    <br />
+    </b>
+    <div class="emptyDiv">
+
+    </div>
+</div>
+<!-- Right Panel Market Ends-->
+<!-- Right Panel Ends-->

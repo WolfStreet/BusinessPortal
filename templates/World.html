@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Business Portal of World 01</title>
+
+		<link href="/style/world.css" type="text/css" rel="stylesheet"/>
+		<link href="/style/leftPanel.css" type="text/css" rel="stylesheet"/>
+		<link href="/style/playArea.css" type="text/css" rel="stylesheet"/>
+		<link href="/style/rightPanel.css" type="text/css" rel="stylesheet"/>
+		<link href="/style/userPanel.css" type="text/css" rel="stylesheet"/>
+		<link href="/style/buttonPanel.css" type="text/css" rel="stylesheet" />
+
+		<script type="text/javascript" src="/script/jquery/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="/script/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="/script/jquery/jquery.indexeddb.js"></script>
+		<script type="text/javascript" src="/script/jquery/jsrender.js"></script>
+		<script type="text/javascript" src="/script/jquery/jquery.observable.js"></script>
+		<script type="text/javascript" src="/script/jquery/jquery.views.js"></script>
+
+		<script type="text/javascript" src="/script/leftPanel.js"></script>
+		<script type="text/javascript" src="/script/playArea.js"></script>
+		<script type="text/javascript" src="/script/userPanel.js"></script>
+		<script type="text/javascript" src="/script/rightPanel.js"></script>
+		<script type="text/javascript" src="/script/world.js"></script>
+		<script type="text/javascript" src="/script/buttonPanel.js"></script>
+
+	</head>
+	<body id="{{.UserName}}" data-career="{{.Career}}">
+		<div id="buttonPanel">
+		</div>
+		<div id="userPanel">
+		</div>
+		<div id="leftPanel">
+			<p class="Message" style="display: none;">
+			</p>
+			<div id="queue">
+			</div>
+			<div id="buildPanel" style="display: none;">
+			</div>
+			<div id="updatePanel" style="display: none;">
+			</div>
+			<div id="buttonTools" style="display: none;">
+			</div>
+		</div>
+		<div id="playArea">
+		</div>
+		<div id="rightPanel">
+		</div>
+		<div id="firstPlayPopup">
+			<select id="careerSelection">
+				<option value="">Please Select your Career</option>
+				<option value="Banker">Banker</option>
+				<option value="Dealer">Dealer</option>
+				<option value="Transport">Transport</option>
+				<option value="Engineer">Engineer</option>
+				<option value="Entrepreneur">Entrepreneur</option>
+			</select>
+		</div>
+		<div class="popup ui-draggable">
+		</div>
+	</body>
+</html>

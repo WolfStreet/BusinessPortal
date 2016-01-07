@@ -1,0 +1,68 @@
+#leftPanel {
+	z-index: 1;
+	margin: 0px;
+	top: 20%;
+	left: 0%;
+	width: 20%;
+	height: 80%;
+	background: -webkit-linear-gradient(top left, rgb(80, 163, 162) 0%, rgb(83, 227, 166) 100%);
+	background: linear-gradient(to bottom right, rgb(80, 163, 162) 0%, rgb(83, 227, 166) 100%);
+}
+
+#buildPanel {
+	z-index: 2;
+	margin: 0px;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	display: none;
+	background: -webkit-linear-gradient(top left, rgb(80, 163, 162) 0%, rgb(83, 227, 166) 100%);
+	background: linear-gradient(to bottom right, rgb(80, 163, 162) 0%, rgb(83, 227, 166) 100%);
+	cursor: pointer;
+	list-style: none;
+}
+
+#buildList {
+	margin-top: 2px;
+	margin-left: 0px;
+	padding: 2px;
+	text-align: left vertical-align : middle;
+	list-style: none;
+}
+
+#buildList li ol {
+	margin-top: 2px;
+	margin-left: 0px;
+	padding: 2px;
+	text-align: justify;
+	display: none;
+	list-style: none;
+}
+
+#buildList li:hover ol {
+	display: block;
+}
+
+#buildList li ol p{
+	color: rgba(0, 0, 0, 1);
+}
+
+#buildList li ol input[type="button"] {
+	-webkit-appearance: caret;
+	border-radius: 0.5em;
+	color: rgba(20,20,20, 0.75);
+	background-color: rgba(100, 100, 200, 0.4);
+}
+
+#buildList li ol input[type="button"]:hover {
+	cursor: pointer;
+}
+
+
+
+
+
+
+

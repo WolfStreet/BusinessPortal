@@ -1,0 +1,9 @@
+{{for Queues}}
+{{if TimeLeft}}
+{{loadBuilding Construction.Type/}}
+<p style="color: rgba(250, 20, 50, 0.6);"> Level - {{:Construction.Level}}</p>
+<p style="color: rgba(250, 20, 50, 0.6);"> Staus - {{floor:Completed}}%</p>
+<p style="color: rgba(250, 20, 50, 0.6);"> Time Left - {{:TimeLeft}}s</p>
+<input type="button" value="cancel" onclick="cancelQueue({{:Construction.Type}}, {{:Construction.Level}}, {{:Coords.X}}, {{:Coords.Y}})" />
+{{/if}}
+{{/for}}

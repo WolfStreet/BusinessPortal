@@ -1,0 +1,43 @@
+<table>
+	<tr>
+		<td>
+		<table id = "resources">
+			<tr>
+				<td>Money</td>
+				<td>Food</td>
+				<td>Wood</td>
+				<td>Metal</td>
+				<td>Cement</td>
+				<td>Clothes</td>
+				<td>Fuel</td>
+			</tr>
+			<tr style="color:rgb(50, 20, 200);">
+				<td id="storedMoney">{{floor:ResStored.Money}}</td>
+				<td id="storedFood">{{floor:ResStored.Food}}</td>
+				<td id="storedWood">{{floor:ResStored.Wood}}</td>
+				<td id="storedMetal">{{floor:ResStored.Metal}}</td>
+				<td id="storedCement">{{floor:ResStored.Cement}}</td>
+				<td id="storedClothes">{{floor:ResStored.Clothes}}</td>
+				<td id="storedFuel">{{floor:ResStored.Fuel}}</td>
+			</tr>
+			<tr style="color:rgb(128, 128, 0);">
+				<td id="productionMoney">({{floor:ResProduction.Money}} /hr)</td>
+				<td id="productionFood">({{floor:ResProduction.Food}} /hr)</td>
+				<td id="productionWood">({{floor:ResProduction.Wood}} /hr)</td>
+				<td id="productionMetal">({{floor:ResProduction.Metal}} /hr)</td>
+				<td id="productionCement">({{floor:ResProduction.Cement}} /hr)</td>
+				<td id="productionClothes">({{floor:ResProduction.Clothes}} /hr)</td>
+				<td id="productionFuel">({{floor:ResProduction.Fuel}} /hr)</td>
+			</tr>
+		</table></td>
+		<td>
+		<table id="player">
+			<tr>
+				<td style = "text-align:right;"><b style = "">Hello {{:Name}} ({{:Career}})</b></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;"><i style="">Skill Points: {{:SkillPoints}}</i></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
